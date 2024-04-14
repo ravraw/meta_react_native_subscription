@@ -16,8 +16,8 @@ const RootNavigator = () => {
       ]}
     >
       <Navigator>
-        <Screen name="welcome" component={WelcomeScreen} />
-        <Screen name="subscribe" component={SubscribeScreen} />
+        {/* <Screen name="Welcome" component={WelcomeScreen} /> */}
+        <Screen name="Subscribe" component={SubscribeScreen} />
       </Navigator>
     </SafeAreaView>
   );
