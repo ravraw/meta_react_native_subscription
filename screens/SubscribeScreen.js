@@ -9,7 +9,6 @@ import {
 } from "react-native";
 
 const SubscribeScreen = () => {
-  // Add subscribe screen code here
   return (
     <View style={styles.container}>
       <Image
@@ -21,7 +20,7 @@ const SubscribeScreen = () => {
       </Text>
       <TextInput style={styles.textInput} placeholder="Hello@example.com" />
       <Pressable style={styles.button}>
-        <Text>Subscribe</Text>
+        <Text style={styles.buttonText}>Subscribe</Text>
       </Pressable>
     </View>
   );
@@ -32,17 +31,11 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "space-evenly",
     alignItems: "center",
-    borderWidth: 2,
-    borderColor: "red",
   },
   logo: {
-    // alignSelf: "center",
-
     width: 150,
     height: 250,
     resizeMode: "contain",
-    borderWidth: 2,
-    borderColor: "red",
   },
   subheading: {
     width: "90%",
@@ -50,15 +43,14 @@ const styles = StyleSheet.create({
     alignContent: "center",
     textAlign: "center",
     fontSize: 20,
-    borderWidth: 2,
-    borderColor: "red",
   },
   textInput: {
     height: 50,
     width: "80%",
+    padding: 10,
     borderRadius: 10,
     borderWidth: 2,
-    borderColor: "red",
+    borderColor: "black",
   },
   button: {
     height: 40,
@@ -66,8 +58,10 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     borderRadius: 10,
-    borderWidth: 2,
-    borderColor: "red",
+    backgroundColor: "#495E57",
+  },
+  buttonText: {
+    color: "#FFFFFF",
   },
 });
 

@@ -2,7 +2,6 @@ import * as React from "react";
 import { Text, View, Image, StyleSheet, Pressable } from "react-native";
 
 const WelcomeScreen = ({ navigation }) => {
-  // Add welcome screen code here.
   return (
     <View style={styles.container}>
       <Image
@@ -13,7 +12,7 @@ const WelcomeScreen = ({ navigation }) => {
         Little Lemon, your local Mediterranean Bistro
       </Text>
       <Pressable style={styles.button}>
-        <Text>Newsletter</Text>
+        <Text style={styles.buttonText}>Newsletter</Text>
       </Pressable>
     </View>
   );
@@ -24,16 +23,11 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "space-evenly",
     alignItems: "center",
-    borderWidth: 2,
-    borderColor: "red",
   },
   logo: {
-    // alignSelf: "center",
     width: 150,
     height: 350,
     resizeMode: "contain",
-    borderWidth: 2,
-    borderColor: "red",
   },
   subheading: {
     width: "90%",
@@ -41,17 +35,17 @@ const styles = StyleSheet.create({
     alignContent: "center",
     textAlign: "center",
     fontSize: 20,
-    borderWidth: 2,
-    borderColor: "red",
   },
   button: {
     height: 40,
-    width: "90%",
+    width: "80%",
     justifyContent: "center",
     alignItems: "center",
     borderRadius: 10,
-    borderWidth: 2,
-    borderColor: "red",
+    backgroundColor: "#495E57",
+  },
+  buttonText: {
+    color: "#FFFFFF",
   },
 });
 
