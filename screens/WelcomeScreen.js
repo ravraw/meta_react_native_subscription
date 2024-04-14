@@ -11,7 +11,10 @@ const WelcomeScreen = ({ navigation }) => {
       <Text style={styles.subheading}>
         Little Lemon, your local Mediterranean Bistro
       </Text>
-      <Pressable style={styles.button}>
+      <Pressable
+        style={styles.button}
+        onPress={() => navigation.navigate("Subscribe")}
+      >
         <Text style={styles.buttonText}>Newsletter</Text>
       </Pressable>
     </View>

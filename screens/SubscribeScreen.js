@@ -7,22 +7,25 @@ import {
   StyleSheet,
   Pressable,
 } from "react-native";
+import KeyboardAvoidingElement from "../components/KeyboardAvoidingElement";
 
 const SubscribeScreen = () => {
   return (
-    <View style={styles.container}>
-      <Image
-        style={styles.logo}
-        source={require("../assets/little-lemon-logo-grey.png")}
-      />
-      <Text style={styles.subheading}>
-        Subscribe to our newsletter for our latest delicious recipes!
-      </Text>
-      <TextInput style={styles.textInput} placeholder="Hello@example.com" />
-      <Pressable style={styles.button}>
-        <Text style={styles.buttonText}>Subscribe</Text>
-      </Pressable>
-    </View>
+    <KeyboardAvoidingElement>
+      <View style={styles.container}>
+        <Image
+          style={styles.logo}
+          source={require("../assets/little-lemon-logo-grey.png")}
+        />
+        <Text style={styles.subheading}>
+          Subscribe to our newsletter for our latest delicious recipes!
+        </Text>
+        <TextInput style={styles.textInput} placeholder="Hello@example.com" />
+        <Pressable style={styles.button}>
+          <Text style={styles.buttonText}>Subscribe</Text>
+        </Pressable>
+      </View>
+    </KeyboardAvoidingElement>
   );
 };
 
