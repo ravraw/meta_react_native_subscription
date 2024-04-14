@@ -11,6 +11,14 @@ import KeyboardAvoidingElement from "../components/KeyboardAvoidingElement";
 
 const SubscribeScreen = () => {
   const [email, setEmail] = useState("");
+  const [isValid, setIsValid] = useState(false);
+
+  const isValidEmail = () => {
+    setIsValid(
+      /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/.test(email)
+    );
+  };
+
   return (
     <KeyboardAvoidingElement>
       <View style={styles.container}>
@@ -25,21 +33,15 @@ const SubscribeScreen = () => {
           value={email}
           placeholder="Hello@example.com"
           onChangeText={setEmail}
+          onChange={isValidEmail}
           keyboardType="email-address"
           maxLength={50}
           style={styles.textInput}
           clearButtonMode="always"
         />
         <Pressable
-          style={[
-            styles.button,
-            !/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$/.test(
-              email
-            ) && { backgroundColor: "gray" },
-          ]}
-          disabled={/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$/.test(
-            email
-          )}
+          style={[styles.button, !isValid && { backgroundColor: "gray" }]}
+          disabled={!isValid}
         >
           <Text style={styles.buttonText}>Subscribe</Text>
         </Pressable>
