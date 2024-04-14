@@ -6,18 +6,22 @@ import {
   Image,
   StyleSheet,
   Pressable,
+  Alert,
 } from "react-native";
 import KeyboardAvoidingElement from "../components/KeyboardAvoidingElement";
+import { validateEmail } from "../utils";
 
-const SubscribeScreen = () => {
+const SubscribeScreen = ({ navigation }) => {
   const [email, setEmail] = useState("");
   const [isValid, setIsValid] = useState(false);
 
   const isValidEmail = () => {
-    setIsValid(
-      /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/.test(email)
-    );
+    setIsValid(validateEmail(email));
   };
+  const showAlert = () =>
+    Alert.alert("", "Thanks for subscribing, stay tuned!", [
+      { text: "OK", onPress: () => navigation.navigate("Welcome") },
+    ]);
 
   return (
     <KeyboardAvoidingElement>
@@ -42,6 +46,7 @@ const SubscribeScreen = () => {
         <Pressable
           style={[styles.button, !isValid && { backgroundColor: "gray" }]}
           disabled={!isValid}
+          onPress={showAlert}
         >
           <Text style={styles.buttonText}>Subscribe</Text>
         </Pressable>

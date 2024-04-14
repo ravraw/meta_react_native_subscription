@@ -1,10 +1,5 @@
 import React, { useState, useEffect } from "react";
-import {
-  KeyboardAvoidingView,
-  StyleSheet,
-  Keyboard,
-  Platform,
-} from "react-native";
+import { KeyboardAvoidingView, StyleSheet, Platform } from "react-native";
 
 const KeyboardAvoidingElement = ({ children }) => {
   return (
