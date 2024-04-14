@@ -3,13 +3,14 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import WelcomeScreen from "../screens/WelcomeScreen";
 import SubscribeScreen from "../screens/SubscribeScreen";
 
-const Stack = createNativeStackNavigator();
+const { Navigator, Screen } = createNativeStackNavigator();
 
 const RootNavigator = () => {
   return (
-    <Stack.Navigator>
-      {/* Set up stack navigation to move between welcome screen and subscribe screen here */}
-    </Stack.Navigator>
+    <Navigator>
+      <Screen name="welcome" component={WelcomeScreen} />
+      <Screen name="subscribe" component={SubscribeScreen} />
+    </Navigator>
   );
 };
 
